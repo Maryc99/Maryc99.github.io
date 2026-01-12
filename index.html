@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <!-- 
+    ========================================
+    METADATOS ESENCIALES
+    ========================================
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <title>María Reyes | Fronted Developer | Portafolio</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/brand.png">
+    <!--  este enlace es para cuando un usuario guarda tu sitio web en la pantalla de inicio de un dispositivo iOS (iPhone/iPad). -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+
+    <meta name="description" content="Portafolio de María Reyes, Ingeniera en telecomunicaciones y electrónica especializada en desarrollo web frontend (React, Javascript). Soluciones UI/UX atractivas y funcionales.">
+    <meta name="keywords" content="frontend, desarrolllador web, portafolio, react, javascript, ui/ux,telecomunicaciones, electrónica">
+    <meta name="author" content="María Reyes">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph para Redes Sociales -->
+    <meta property="og:title" content="María Reyes | Fronted Developer | Portafolio">
+    <meta property="og:description" content="Soy una ingeniera con mente analítica y alma creativa. Disfruto dar vida a ideas a través del desarrollo frontend. ¡Echa un vistazo a mis proyectos!.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.tuportafolio.com">
+    <meta property="og:image" content="http://www.tuportafolio.com/imagen-portafolio.jpg">
+    <meta property="site_name" content="Portafolio de María Reyes">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maria Reyes- Desarrolladora Web">
+    <meta name="twitter:description" content="Mi perfil personal como desarrolladora web en formación">
+    <meta name="twitter:image" content="https://miperfilpersonal.com/assets/images/twitter-card.jpg">
+    <meta name="twitter:creator" content="@mariareyes_dev">
+
+    <!-- URLs Canónicas -->
+    <link rel="canonical" href="https://miperfilpersonal.com/">
+    <link rel="alternate" hreflang="es" href="https://miperfilpersonal.com/es/">
+    <link rel="alternate" hreflang="en" href="https://miperfilpersonal.com/en/">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Estilos CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+   <div class="layout">
+     <!--skip link-->
+    <a href="#contenido-principal" class="skip-link">saltar al contenido Principal</a>
+
+    <!-- 
+    ========================================
+    HEADER PRINCIPAL
+    ========================================
+    -->
+    <header class="main-header" role="banner">
+        <!-- Logo y Marca Personal -->
+            <div class="brand">
+                    <img src="/assets/favicon/brand.png" alt="Mi Perfil Personal">
+            </div>  
+
+        <!-- Navegación Principal -->
+            <nav class="main-nav"  aria-label="Navegación principal">
+                <ul>
+                    <li><a href="/" aria-current="page">Inicio</a></li>
+                    <li><a href="/sobre-mi.html">Sobre mi</a></li>
+                    <li><a href="/habilidades.html">Habilidades</a></li>
+                    <li><a href="/proyectos.html">Proyectos</a></li>
+                    <li><a href="/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+         <!-- Acciones Rápidas -->
+        <div class="header-actions">
+            <a href="/assets/documents/cv-maria-reyes.pdf" download aria-label="Descargar CV en PDF">
+            📄 CV
+            </a>
+        <!-- Selector de Idioma -->
+            <select aria-label="Seleccionar idioma">
+                <option value="es" selected>ES</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+
+    </header>
+    <!-- 
+    ========================================
+    CONTENIDO PRINCIPAL
+    ========================================
+    -->
+    <main id="main-content" role="main">
+
+        <!-- Hero Section -->
+        <section class="hero-section card large-card" aria-labelledby="hero-titulo">
+            <div class="hero-presentation">
+                <h1 id="hero-titulo">¡Hola! Soy María Claudia</h1>
+                <p><strong>Ingeniera que construye la web</strong></p>
+                <p>
+                    Bienvenid@ a mi portafolio de Frontend Developer.Soy una ingeniera con mente analítica y alma creativa que disfruta dar vida a ideas a través del desarrollo frontend. ¡Echa un vistazo a mis proyectos!.
+                </p>
+            </div>
+
+            <!-- Call to Actions -->
+            <div class="hero-actions">
+                <a href="#proyectos-destacados" class="btn primary-btn">Ver Mis Proyectos</a>
+                <a href="/contacto.html" class="btn secondary-btn">Contáctame</a>
+            </div>
+
+            <!-- Estadísticas Rápidas -->
+            <div class="hero-stats">
+                <div class="stat-badge"><data value="6">6+</data><span>Meses aprendiendo</span></div>
+                <div class="stat-badge"><data value="3">3+</data><span>Proyectos completados</span></div>
+                <div class="stat-badge"><data value="5">5+</data><span>Tecnologías</span></div>
+            </div>
+
+            <!-- Imagen de Perfil -->
+            <picture class="perfil-foto">
+                <source media="(min-width: 768px)" srcset="/assets/fotoDePerfil.jpeg" type="image/webp">
+                <img src="/assets/fotoDePerfil.jpeg" alt="María Reyes - Desarrolladora Web en Formación"
+                loading="eager">
+            </picture>
+        </section>
+
+        <!-- Sección Sobre Mí -->
+        <section aria-labelledby="about-titulo" class="about-card card">
+                <h2 id="about-titulo">Mi viaje en le desarrollo web</h2>
+
+                <p>
+                    Soy <strong>desarrolladora web en formación</strong>, actualmente aprendiendo HTML, CSS y JavaScript para crear sitios web hermosos y funcionales.
+                </p>
+
+                <p>
+                    Mi pasión por la tecnología y el diseño me ha llevado a explorar el mundo del desarrollo frontend. Me encanta combinar mi mente analítica con mi creatividad para construir experiencias web atractivas y fáciles de usar.
+                </p>
+
+                <blockquote>
+                    <p><i>"No me hagas pensar, sólo haz que funcione."</i></p>
+                    <cite>— Steve Krug, <i>"No me hagas pensar"</i></cite>
+                </blockquote>
+                
+                <!-- Valores Personales -->
+                <h3>Mis Valores</h3>
+                <dl>
+                    <dt>🎯 Dedicación</dt>
+                    <dd>Comprometida con mi aprendizaje diario</dd>
+
+                    <dt>📚 Curiosidad</dt>
+                    <dd>Siempre explorando nuevas tecnologías</dd>
+
+                    <dt>🤝 Comunidad</dt>
+                    <dd>Aprendiendo y compartiendo con otros</dd>
+
+                    <dt>💡 Creatividad</dt>
+                    <dd>Buscando soluciones innovadoras</dd>
+                </dl>
+
+                <a href="/sobre-mi.html" class="link-more">Conoce más sobre mí →</a>
+        </section>
+
+            <!-- Habilidades Técnicas -->
+        <section aria-labelledby="skills-titulo" class="skills-card card">
+                <h2 id="skills-titulo">Mis habilidades</h2>
+
+                <h3>Tecnologías que estoy aprendiendo</h3>
+                <ul>
+                    <li>
+                        <img src="/assets/logo-html.jpeg" alt="" width="40" height="40" aria-hidden="true">
+                        <span>HTML5 & Semántica</span>
+                        <progress value="75" max="100" aria-label="75% de dominio">
+                            75%
+                        </progress>
+                    </li>
+                    <li>
+                        <img src="/assets/logo-css3.png" alt="" width="40" height="40" aria-hidden="true">
+                        <span>CSS3 & Diseño</span>
+                        <progress value="60" max="100" aria-label="60% de dominio">
+                            60%
+                        </progress>
+                    </li>
+                    <li>
+                        <img src="/assets/logo-js.jpeg" alt="" width="40" height="40" aria-hidden="true">
+                        <span>JavaScript (Comenzando)</span>
+                        <progress value="20" max="100" aria-label="20% de dominio">
+                            20%
+                        </progress>
+                    </li>
+                    <li>Diseño responsivo</li>
+                    <li>Control de versiones: Git</li>
+                </ul>
+        </section>
+
+            <!-- Proyectos Destacados -->
+        <section id="proyectos-destacados" aria-labelledby="projects-titulo" class="projects-card card">
+                <h2 id="projects-titulo">Mis Proyectos de Práctica</h2>
+                <p>
+                    Cada proyecto representa mi progreso aprendiendo desarrollo web.
+                    Desde páginas simples hasta este portfolio completo.
+                </p>
+
+                <!-- Proyecto 1 -->
+                <article>
+                    <figure>
+                    <picture>
+                        <source type="image/webp" srcset="/assets/images/proyectos/primer-sitio.webp">
+                        <img src="/assets/images/proyectos/primer-sitio.jpg" alt="Captura de mi primer sitio web con HTML y CSS"
+                        width="800" height="600" loading="lazy">
+                    </picture>
+                    <figcaption>Mi Primer Sitio Web - HTML y CSS básico</figcaption>
+                    </figure>
+
+                    <h3>Mi Primer Sitio Web</h3>
+                    <p>
+                    Mi primer proyecto completo usando HTML y CSS. Una página
+                    simple pero bien estructurada donde apliqué los conceptos
+                    básicos aprendidos.
+                    </p>
+
+                    <h4>Lo que aprendí:</h4>
+                    <ul>
+                    <li>🎯 Estructura semántica de HTML</li>
+                    <li>📊 Box Model y layout básico</li>
+                    <li>🎨 Estilos CSS fundamentales</li>
+                    <li>♿ Principios básicos de accesibilidad</li>
+                    <li>📱 Introducción al diseño responsivo</li>
+                    </ul>
+
+                    <h4>Tecnologías usadas:</h4>
+                    <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    </ul>
+
+                    <h4>Logros del proyecto:</h4>
+                    <div>
+                    <data value="100">100%</data> HTML válido
+                    </div>
+                    <div>
+                    <data value="0">0</data> Errores de accesibilidad
+                    </div>
+                    <div>
+                    <data value="95">95</data> Score en Lighthouse
+                    </div>
+
+                    <a href="/proyectos/primer-sitio.html">
+                    Ver detalles del proyecto
+                    </a>
+                    <a href="https://demo.miprimer-sitio.com" target="_blank" rel="noopener">
+                    Ver demo ↗
+                    </a>
+                </article>
+
+                <a href="/proyectos.html" class="link-more">Ver todos los proyectos →</a>
+        </section>
+
+            <!-- Call to Action -->
+            <section aria-labelledby="cta-colaborar" class="cta-card card">
+                        <h3 id="cta-colaborar">🚀 Proyectos de Práctica</h3>
+                        <p>¿Tienes una idea? Colaboremos y aprendamos juntos</p>
+                        <a href="/contacto.html#colaborar" class="btn tertiary-btn">Colaborar</a>
+                </section>
+        
+                <section aria-labelledby="cta-conectar" class="cta-card card">
+                        <h3 id="cta-conectar">💬 Conectemos</h3>
+                        <p>¿Eres principiante también? Aprendamos juntos</p>
+                        <a href="/contacto.html#conectar" class="btn tertiary-btn">Conectar</a>
+                </section>
+
+                <section aria-labelledby="cta-recursos" class="cta-card card">
+                        <h3 id="cta-recursos">📚 Recursos</h3>
+                        <p>Compartamos recursos y tips de aprendizaje</p>
+                        <a href="/contacto.html#recursos" class="btn tertiary-btn">Compartir</a>
+                </section>
+
+    </main>
+
+    <!-- 
+    ========================================
+    FOOTER COMPLETO
+    ========================================
+    -->
+    <footer class="footer" role="contentinfo">
+        <!-- Sobre Mi Perfil Personal -->
+        <section aria-labelledby="footer-about">
+            <h2 id="footer-about">Mi Perfil Personal</h2>
+            <p>
+                Portfolio personal de María Reyes.
+                Aprendiendo desarrollo web, un día a la vez.
+            </p>
+        </section>
+
+        <!-- Enlaces del Footer -->
+        <nav aria-label="Enlaces del footer">
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/sobre-mi.html">Sobre mí</a></li>
+            <li><a href="/proyectos.html">Proyectos</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contacto.html">Contacto</a></li>
+        </ul>
+        </nav>
+
+        <!-- Contacto -->
+        <section aria-labelledby="footer-contact">
+            <h2 id="footer-contact">Contacto</h2>
+            <address>
+                <dl>
+                    <dt>Email:</dt>
+                    <dd>
+                        <a href="mailto:m.claudiarh99@gmail.com">
+                        m.claudiarh99@gmail.com
+                        </a>
+                    </dd>
+
+                    <dt>LinkedIn:</dt>
+                    <dd>
+                        <a href="https://www.linkedin.com/in/maria-claudia-reyes-hernandez-18a394241/" target="_blank" rel="noopener">
+                        /in/mariareyes_dev
+                        </a>
+                    </dd>
+
+                    <dt>GitHub:</dt>
+                    <dd>
+                        <a href="https://github.com/mariareyes" target="_blank" rel="noopener">
+                        @mariareyes
+                        </a>
+                    </dd>
+
+                    <dt>Ubicación:</dt>
+                    <dd>Madrid, España</dd>
+                </dl>
+            </address>
+        </section>
+
+        <!-- Redes Sociales -->
+        <section aria-labelledby="footer-social">
+            <h2 id="footer-social">Sígueme</h2>
+            <ul>
+                <li>
+                <a href="https://github.com/mariareyes" target="_blank" rel="noopener"
+                    aria-label="GitHub de María Reyes">
+                    GitHub
+                </a>
+                </li>
+                <li>
+                <a href="https://twitter.com/mariareyes_dev" target="_blank" rel="noopener"
+                    aria-label="Twitter de María Reyes">
+                    Twitter
+                </a>
+                </li>
+                <li>
+                <a href="https://linkedin.com/in/mariareyes_dev" target="_blank" rel="noopener"
+                    aria-label="LinkedIn de María Reyes">
+                    LinkedIn
+                </a>
+                </li>
+            </ul>
+
+            <!-- Descargas -->
+            <a href="/assets/documents/cv-maria-reyes.pdf" download>
+                📄 Descargar mi CV (PDF)
+            </a>
+            </section>
+
+            <!-- Footer Bottom -->
+            <div>
+            <p>&copy; 2025 María Reyes - Mi Perfil Personal. Todos los derechos reservados.</p>
+
+            <nav aria-label="Enlaces legales">
+                <a href="/privacidad.html">Privacidad</a>
+                <a href="/terminos.html">Términos</a>
+                <a href="/accesibilidad.html">Accesibilidad</a>
+            </nav>
+
+            <p>
+                Diseñado y desarrollado con ❤️ por María Reyes.
+            </p>
+            </div>
+    </footer>
+   </div>
+</body>
+</html>

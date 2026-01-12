@@ -1,0 +1,447 @@
+    /* ==========================================================================
+   1. BASE(1): 1. RESET BASICO Y ESTILOS GENERALES (reset, body,h1-h6, a)
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+    /*(1) 2. VARIABLES CSS PARA COLORES Y TIPOGRAFÍA */
+
+:root {
+
+    --color-background: #0e0e10; /* fondo general (NEGRO) */
+    --color-text: #f2f2f2; /* texto principal o footer (CLARO)*/;
+    --color-secondary: #1c1c21; /* Fondo de secciones/tarjetas (gris claro) */
+    --color-accent: #6a0dad; /* detalles menores: hover bordes, degradados */
+    --color-highligh: #8a2be2; /* encabezados, botones */
+    --color-shadow: rgb(0, 0, 0, 0.4);
+
+    --font-family-primary: 'Poppins', sans-serif; /*TIPOGRAFIA*/
+    --font-size-base: 1rem;
+
+    --spacing-unit: 1.6rem; /*Layout*/
+    --container-width: 1200px;
+}   
+
+html {
+    height: 100%;
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    font-family: var(--font-family-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    /* Grid principal para layout */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+/* =========================================================================
+    LAYOUTS(3) ESTRUCTURA GENERAL DE LA PAGINA (GRID, HEADER Y FOOTER) 
+    1. LAYOUT PRINCIPAL CON GRID Y GRID-TEMPLATE-AREAS
+============================================================================ */
+
+.layout {
+    display: contents; /* Permite que los hijos directos hereden el grid del body */
+}
+
+header {
+    grid-area: header;
+    width: 100%;
+    display: flex; /* Flexbox para alinear horizontalmente el logo nav y acciones */
+    justify-content: space-between; 
+    align-items: center; 
+    padding: var(--spacing-unit) calc(2 * var(--spacing-unit));
+    position: sticky;
+    top: 0;
+    height: 80px;
+    z-index: 1000;
+}   
+
+main {
+    grid-area: main;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: calc(2 * var(--spacing-unit));
+    display: flex;
+    flex-direction: column;
+    gap: calc(2 * var(--spacing-unit));
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    gap: calc(2 * var(--spacing-unit));
+    padding: calc(2 * var(--spacing-unit));
+    border-top: 1px solid var(--color-secondary);
+    background-color: var(--color-secondary);
+}
+/*media querie para desktop*/
+@media (min-width: 1024px) {
+    .cards-grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas para desktop*/
+    }
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+.skip-link:focus {
+    top: 15rem;
+}
+.skip-link:hover {
+    color: var(--color-text); 
+}
+h1, h2, h3 {
+    font-family: 'Indie Flower', sans-serif;
+    line-height: 1.2;
+    color: var(--color-accent);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-accent);
+    transition: color 0.3s ease;
+}
+
+/*==========================================================================
+   2.COMPONENTES(2): MODULOS REUTILIZABLES (BOTONES, TARJETAS, LISTAS)  
+   1. BLOQUE .CARD (estilo base para todas las secciones tipo tarjeta) 
+============================================================================= */
+.card {
+    background-color: var(--color-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--color-shadow);
+    padding: calc(2 * var(--spacing-unit));
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--color-shadow);
+}
+/* =========================================================================
+   SECCIONES CON FLEXBOX: Cada section es un contenedor flex vertical
+============================================================================ */
+section {
+    display: flex;
+    flex-direction: column;
+    gap: calc(1.5 * var(--spacing-unit));
+}
+
+    /*(2) 2. BLOQUE .BTN (bOTONES) */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'indie Flower', sans-serif;
+}
+/*modificador*/
+
+.btn:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+.primary-btn {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    border: none;
+}
+.primary-btn:hover {
+    background-color: var(--color-highligh);
+}
+
+    /*(2) 3. HEADER Y NAV*/
+.main-header {
+    background-color: var(--color-background);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    z-index: 1000;
+    margin: 0 auto;
+    background: linear-gradient(to bottom right, var(--color-highligh), var(--color-accent), var(--color-secondary), var(--color-background));
+}
+.brand img {
+    height: 6rem;
+    width: auto;
+    border-radius: 50%;
+}
+.main-nav {
+    display: none;
+}
+@media (min-width: 768px) {
+    .main-nav {
+        display: flex;
+    }
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: calc(2 * var(--spacing-unit));
+}
+.main-nav a {
+    font-family: 'Indie Flower', sans-serif;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-weight: bold;
+    color: var(--color-text);
+}
+.main-nav ul li a {
+    padding: 0.5rem 1rem;
+}
+.main-nav ul li a:hover {
+    color: var(--color-highligh);
+}      
+.header-actions {
+    display: flex;
+    gap: calc(1 * var(--spacing-unit));
+}     
+.header-actions a {
+    font-size: clamp(0.8rem, 2vw, 1.6rem);
+    color: var(--color-text);
+}
+.header-actions a:hover {
+    color: var(--color-highligh);
+}
+.header-actions select {
+    font-size: clamp(0.8rem, 2vw, 1.6rem);
+    padding: 0.2rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-accent);
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+}
+.header-actions select:hover {
+    border-color: var(--color-highligh);
+}
+
+/* =======================================================================
+   4. SECCIONES: ESTILOS ESPECIFICOS DE CADA SECCION (HERO, ABOUT, SKILLS)
+1. HOME(HERO SECTION) 
+========================================================================== */
+.hero-section {
+    display: flex; /* Usamos flexbox para que los elementos se apilen de forma limpia en móvil */
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.hero-presentation {
+    margin-top: 2rem;
+    text-align: center;
+    text-shadow:1px 1px 5px var(--color-highligh);
+
+}  
+.hero-presentation h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 4rem;
+    text-align: center;
+    text-shadow:1px 1px 5px var(--color-highligh);
+}
+
+.hero-presentation p {
+    font-size: clamp(0.8rem, 2.5vw, 1.4rem);
+    margin-bottom: 0.6rem;
+    text-align: center;
+    text-shadow:1px 1px 5px var(--color-highligh);
+}
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 4rem;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+.hero-stats {
+    display: flex; /* para organizar las 3 estadisticas */
+    flex-direction: column;
+    justify-content: space-around;
+    padding: var(--spacing-unit);
+    border-radius: 8px;
+}
+.stat-badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent); /* Borde púrpura */
+    background-color: var(--color-secondary); /* Fondo de la tarjeta */
+    font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+    box-shadow: 2px 1px 4px;
+}
+.stat-badge data {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: bold;
+    color: var(--color-highligh); /* Color púrpura para el número */
+    line-height: 1;
+}
+.perfil-foto img {
+   display: none;
+}
+
+@media (min-width: 900px) {
+    .hero-section {
+        display: grid;
+        /* Definimos 3 columnas: Columna 1 (mediana), Columna 2 (más pequeña), Columna 3 (foto) */
+        grid-template-columns: 1.5fr 0.8fr 1.5fr; /* Ejemplo de pesos: 40%, 20%, 40% */
+        grid-template-rows: 1fr 0.5fr; 
+        gap: 30px; /* Espacio entre las celdas de la rejilla */
+        align-items: start; /* Asegura que el contenido se alinee arriba */
+        padding: 40px; /* Padding interno para que los bloques no se peguen a los bordes de la tarjeta */ 
+        height: 100vh;
+    }
+    .hero-presentation {
+        grid-column: 1 / 2; /* Ocupa la primera columna */
+        grid-row: 1 / 2; /* Ocupa la primera fila */
+    }
+    .hero-actions {
+        grid-column: 1 / 2; /* Ocupa la primera columna */ 
+        grid-row: 2 / 3; /* Ocupa la segunda fila */
+    }
+    .hero-stats {
+        display: grid;
+        grid-column: 2 / 3; /* Columna 2 */
+        grid-row: 1 / 2;    /* OCUPA LAS FILAS 1 Y 2 */
+    }
+    .perfil-foto img {
+        display: grid;
+        width: 100%;
+        height: 50%;
+        object-fit: cover; /* Asegura que la imagen no se distorsione */
+        border-radius: 8px; 
+        box-shadow: 6px 3px 18px 0 var(--color-highligh);
+    }
+
+}
+
+/*============================================================================================
+     PROYECTOD: Grid específico con tarjetas anidadas 
+==========================================================================================*/
+#proyectos-destacados {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(2 * var(--spacing-unit));
+}
+
+#proyectos-destacados h2,
+#proyectos-destacados > p {
+    grid-column: 1 / -1; /* Encabezado y descripción ocupan todo el ancho */
+}
+
+#proyectos-destacados article {
+    display: flex;
+    flex-direction: column;
+    gap: calc(1.5 * var(--spacing-unit));
+    padding: calc(2 * var(--spacing-unit));
+    background-color: var(--color-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--color-shadow);
+}
+
+/* En desktop: 2-3 columnas para tarjetas de proyectos */
+@media (min-width: 768px) {
+    #proyectos-destacados {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    #proyectos-destacados {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================================
+   CTA (CALL TO ACTION): Grid para mostrar 3 cards en fila
+============================================================================ */
+.cta-card {
+    display: flex;
+    flex-direction: column;
+    gap: calc(1 * var(--spacing-unit));
+    padding: calc(2 * var(--spacing-unit));
+    background-color: var(--color-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--color-shadow);
+}
+/* CTA Group: contiene 3 cards en fila */
+/* Agrupa las 3 CTAs en grid de 3 columnas */
+@media (min-width: 768px) {
+    main > .cta-card:nth-of-type(6) {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: calc(2 * var(--spacing-unit));
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    main > .cta-card:nth-of-type(7),
+    main > .cta-card:nth-of-type(8) {
+        display: none;
+    }
+}
+
+/* =======================================================================
+UTILIDADES/ AYUDAS(5) 1. MIXINS (FUNCIONES REUTUILIZABLES, EJ: MEDIA QUERIE)
+========================================================================== */
+.u-text-center {
+    text-align: center !important;
+}
+
+.u-margin-bottom-lg {
+    margin-bottom: calc(3 * var(--spacing-unit)) !important;
+}
+
+/* Opcional: Para ocultar en diferentes dispositivos */
+.u-hidden-mobile {
+    display: none !important;
+}
+@media (min-width: 768px) {
+    .u-hidden-mobile {
+        display: initial !important; 
+    }
+}
+.u-hidden-desktop {
+    display: initial !important;
+}
+@media (min-width: 768px) {
+    .u-hidden-desktop {
+        display: none !important; 
+    }   
+}
+
+
